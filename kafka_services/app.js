@@ -12,7 +12,7 @@ app.post("/api/log", jsonParser, constrollers.sendLogToKafka);
 // consume from topic "test-topic"
 const kafkaConfig = new KafkaConfig();
 kafkaConfig.consume("my-topic", (value) => {
-  console.log("📨 Receive message: ", value);
+  console.log(" Receive message: ", value);
 });
 
 app.listen(9090, () => {
