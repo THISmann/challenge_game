@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>socket com</title>
+  </head>
+  <body>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script> 
+      // Dans le navigateur client (avec la bibliothèque cliente Socket.IO)
+      const socket = io("http://localhost:3000");
+      socket.emit("message", "Hello, server je suis le front-end !");
+      socket.emit("message", "hello je suis le second back-end numero 2")
+
+      socket.on("message-response", (data) => {
+        console.log(`Message du serveur : ${data}`);
+      });
+    </script>
+  </body>
+</html>
